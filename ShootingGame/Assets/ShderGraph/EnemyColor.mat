@@ -91,10 +91,10 @@ Material:
     - _ZWrite: 1
     - _fresnelPower: 1.42
     - _moveSpeed: 0.003
-    - _noise: 110
+    - _noise: 111.05
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _InColor: {r: 0, g: 0.6798725, b: 1, a: 0.99215686}
-    - _outColor: {r: 0.60386276, g: 0, b: 1, a: 1}
+    - _outColor: {r: 0.71623516, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []
