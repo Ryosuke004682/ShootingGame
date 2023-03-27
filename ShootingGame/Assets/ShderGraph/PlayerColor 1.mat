@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerColor
+  m_Name: PlayerColor 1
   m_Shader: {fileID: -6465566751694194690, guid: e41df434acb57dd44af460c0cdc005b6, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -89,12 +89,12 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _fresnelPower: 4
-    - _moveSpeed: 0.008
-    - _noise: 200
+    - _fresnelPower: -0.7
+    - _moveSpeed: 0.003
+    - _noise: 180
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _InColor: {r: 1, g: 0.4062058, b: 0, a: 0.99215686}
-    - _outColor: {r: 1, g: 0.8509492, b: 0, a: 1}
+    - _InColor: {r: 0, g: 0.7013531, b: 1, a: 0.99215686}
+    - _outColor: {r: 0.6525454, g: 0.7019608, b: 0.7608744, a: 1}
   m_BuildTextureStacks: []
