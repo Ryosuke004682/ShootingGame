@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PLayerBullet
+  m_Name: EnemyBullet
   m_Shader: {fileID: -6465566751694194690, guid: e41df434acb57dd44af460c0cdc005b6, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -89,12 +89,12 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _fresnelPower: -3.3
+    - _fresnelPower: -2
     - _moveSpeed: 0.003
-    - _noise: 43.18
+    - _noise: 110
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _InColor: {r: 0.06170082, g: 1, b: 0, a: 0.99215686}
-    - _outColor: {r: 0, g: 0.25273585, b: 1, a: 1}
+    - _InColor: {r: 1, g: 0.1585162, b: 0, a: 0.99215686}
+    - _outColor: {r: 0.8584906, g: 0.22704987, b: 0, a: 1}
   m_BuildTextureStacks: []
