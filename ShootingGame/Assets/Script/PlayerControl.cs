@@ -56,7 +56,7 @@ public class PlayerControl : MonoBehaviour
             var bullet = bulletPool.Launch(transform.position , 0);
 
             if (bullet != null)
-                bullet.GetComponent<BulletMove>().speed = 10;
+                bullet.GetComponent<BulletMove>().speed = 30;
 
             interval = 0.1f;
         }
