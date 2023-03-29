@@ -5,23 +5,25 @@ using UnityEngine;
 public class StageControl : MonoBehaviour
 {
     [SerializeField] public ObjectPool p_Bulletpool = null;
+    [SerializeField] public ObjectPool e_BulletPool = null;
     [SerializeField] public PlayerControl playerObj = null;
+    [SerializeField] public StageSequencer sequence = null;
 
     private float stageSpeed = 5.0f;
+
+
     private static StageControl instance;
 
-
-    public static StageControl Instance { get => instance; }
+    public  static StageControl Instance { get => instance; }
     private void Awake()
     {
         instance = this.GetComponent<StageControl>();
     }
 
-
-
     private void Start()
     {
-        instance = this.GetComponent<StageControl>();
+        sequence.Load();
+
     }
 
     private void Update()
