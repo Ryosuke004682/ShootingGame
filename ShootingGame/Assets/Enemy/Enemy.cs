@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -8,12 +9,15 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float hitFlashTime = 0.05f;
 
     private Material flashMaterial = null;
-
+    private ObjectPool enemyBulletPool;
 
     private void Start()
     {
         flashMaterial = transform.GetComponentsInChildren<Renderer>()[0].material;
         flashMaterial.EnableKeyword("_EMISSION");
+
+
+        enemyBulletPool = StageControl.Instance.e_BulletPool;
     }
 
 
@@ -50,5 +54,38 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(hitFlashTime);
         flashMaterial.SetColor("_EmissionColor", Color.black);
     }
+
+    public void Shot(EnemyBulletPatarn _o)
+    {
+        var stageInstanceObj = StageControl.Instance.playerObj;
+
+
+
+        var angleDistance = (_o.Count - 1) / 2.0f;
+
+        //ˆÃ–Ù‚ÈŒ^w’è‚·‚é‚ÆAˆÈ‰º‚ÌVector3.SignedAngle‚Å’e‚©‚ê‚é‚Ì‚Åw’è‚·‚éB
+        float baseDirection = 0;
+
+        //Player‚ğ‘_‚¤‚È‚çPlayer‚Ì‚¢‚é•ûŒü‚ÉA‘_‚Á‚Ä‚È‚¢‚È‚ç©•ª‚ªŒü‚¢‚Ä‚é•ûŒü‚É’e‚ğŒ‚‚ÂB
+        if (_o.IsAimPlayer)
+        {
+            baseDirection = Vector3.SignedAngle
+                           (Vector3.forward, stageInstanceObj.transform.localPosition - transform.localPosition,
+                           Vector3.up);
+        }
+        else { baseDirection = _o.Direction; }
+
+
+        for (var i = 0; i < _o.Count; i++)
+        {
+            var d = ((i - angleDistance) * _o.Angle);
+            var obj = enemyBulletPool.Launch(transform.position, d + baseDirection);
+
+            if (obj != null)
+                obj.GetComponent<BulletMove>().speed = _o.Speed;
+        }
+
+    }
+
 
 }

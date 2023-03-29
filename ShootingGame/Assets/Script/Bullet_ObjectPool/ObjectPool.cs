@@ -36,7 +36,7 @@ public class ObjectPool : MonoBehaviour
 
         var temp = bulletQueue.Dequeue();
         temp.gameObject.SetActive(true);
-        temp.Show(position + new Vector3(0.0f,0.0f, 1.2f), angle);
+        temp.Show(position , angle);
         return temp;
     }
 
@@ -46,7 +46,7 @@ public class ObjectPool : MonoBehaviour
         bulletQueue.Enqueue(bullet);
     }
 
-    /*ゲームシーン全体に「Hideをだせー！」と命令する奴*/
+   
     public void Reset()
     {
         BroadcastMessage($"Hide , {SendMessageOptions.DontRequireReceiver}");
