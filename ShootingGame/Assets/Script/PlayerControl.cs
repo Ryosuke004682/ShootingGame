@@ -13,30 +13,44 @@ public class PlayerControl : MonoBehaviour
     [Space]
     [SerializeField] private float minPositionX = -3.0f;
     [SerializeField] private float maxPositionX = 3.0f;
+    
+    
     [Header("Player‚Ì‰Ò“­—Ìˆæ - c•ûŒü -")]
-
     [Space]
     [SerializeField] private float minPositionZ = -4.0f;
     [SerializeField] private float maxPositionZ = 4.0f;
 
-    private float interval = 0;
 
+    [Header("‹“_Ø‚è‘Ö‚¦")]
+    [Space]
+    [SerializeField] private Camera fpsCam;
+    [SerializeField] private Camera tpsCam;
+
+
+    private float interval = 0;
     private ObjectPool bulletPool;
 
 
     private void Start()
     {
-        bulletPool = StageControl.Instance.p_Bulletpool;
+        bulletPool = StageControl.Instance.p_BulletPool;
+
+        fpsCam.enabled = false;
+        tpsCam.enabled = true;
     }
 
     private void Update()
     {
         interval -= Time.deltaTime;
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            fpsCam.enabled = !fpsCam.enabled;
+            tpsCam.enabled = !tpsCam.enabled;
+        }
     }
 
-    private void FixedUpdate()
-    {
-    }
+
 
     /* ˆÚ“®§ŒÀ‚ğ‚©‚¯‚éB */
     public void PlayerMove(Vector3 moveDirection)
