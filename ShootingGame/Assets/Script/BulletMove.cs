@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour
 {
     
-    public float speed = 15.0f;
+    public float speed = 7.0f;
 
     PoolContent poolContent;
 

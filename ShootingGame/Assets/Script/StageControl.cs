@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class StageControl : MonoBehaviour
 {
-    [SerializeField] public ObjectPool p_Bulletpool = null;
+    [SerializeField] public ObjectPool p_BulletPool = null;
     [SerializeField] public ObjectPool e_BulletPool = null;
+    [SerializeField] public Transform  enemys       = null;
     [SerializeField] public PlayerControl playerObj = null;
     [SerializeField] public StageSequencer sequence = null;
 
-    private float stageSpeed = 5.0f;
-
+    public  float stageSpeed        = 5.0f;
+    private float stageProgressTime = 0.0f;
 
     private static StageControl instance;
 
@@ -22,12 +23,17 @@ public class StageControl : MonoBehaviour
 
     private void Start()
     {
+        
         sequence.Load();
-
+        sequence.StageReset();
+        stageProgressTime = 0;
     }
 
     private void Update()
     {
+        sequence.Step(stageProgressTime);
+        stageProgressTime += Time.deltaTime;
+
         PlayerMoveInput();
     }
 

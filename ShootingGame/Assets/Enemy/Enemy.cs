@@ -31,6 +31,9 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("PlayerBullet"))
         {
+            Debug.Log("“–‚½‚Á‚Ä‚é‚æ‚ñ");
+
+
             var poolObj = other.GetComponent<PoolContent>();
             poolObj.Hide();
 

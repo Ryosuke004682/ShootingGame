@@ -18,22 +18,22 @@ PrefabInstance:
     - target: {fileID: 6379500811057291996, guid: db1b285eac0314d47b4ab42f0782c31c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0962671f2ccb5c44697af46d1db1a9d1, type: 2}
+      objectReference: {fileID: 2100000, guid: b15042cb1b6b63a44bf8690c65b15f20, type: 2}
     - target: {fileID: 6379500811057291998, guid: db1b285eac0314d47b4ab42f0782c31c, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6379500811057291998, guid: db1b285eac0314d47b4ab42f0782c31c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6379500811057291998, guid: db1b285eac0314d47b4ab42f0782c31c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6379500811057291998, guid: db1b285eac0314d47b4ab42f0782c31c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6379500811057291998, guid: db1b285eac0314d47b4ab42f0782c31c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -79,5 +79,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2882763219503320643, guid: db1b285eac0314d47b4ab42f0782c31c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: db1b285eac0314d47b4ab42f0782c31c, type: 3}

@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628ff443e4e1a7d41ab34b8f158fef13, type: 3}
   m_Name: Test_StageSequencer
   m_EditorClassIdentifier: 
-  fileName: 
+  fileName: Stage
+  enemyPrefabs:
+  - {fileID: -2181686550816492446, guid: 65eb6fe550e92a94b9522516e37c25e8, type: 3}
+  - {fileID: 8959328060541453923, guid: 47009df010c287649b130dd035cfcc98, type: 3}
+  - {fileID: 3489904085998823921, guid: 2f99813d27f24294aa840f14282cb00d, type: 3}
