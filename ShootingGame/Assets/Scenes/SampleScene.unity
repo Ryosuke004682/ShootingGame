@@ -269,14 +269,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522413461}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0082257, y: 0.74, z: -0.268}
+  m_LocalRotation: {x: 0.018869817, y: -0, z: -0, w: 0.99982196}
+  m_LocalPosition: {x: -0.0082257, y: 0.67, z: -0.97}
   m_LocalScale: {x: 1.0712346, y: 1.1564106, z: 0.91161}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1246286731}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.162, y: 0, z: 0}
 --- !u!20 &522413464
 Camera:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9685e563fe203cf4d8df3502d5b68389, type: 2}
+  - {fileID: 2100000, guid: b15042cb1b6b63a44bf8690c65b15f20, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -657,6 +657,52 @@ Transform:
   m_Father: {fileID: 116587962}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &919961184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 919961185}
+  - component: {fileID: 919961186}
+  m_Layer: 0
+  m_Name: ExplosionPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &919961185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919961184}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1068710740}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &919961186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919961184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd1e15cb86a629409cd76ad20a3f144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 6707552261606971507, guid: be75576e4626c0d408b2fd63ef8a2293, type: 3}
+  maxBullet: 30
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a61aef5979ec3408dc78bba8590e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particlePool: {fileID: 919961186}
   p_BulletPool: {fileID: 698201854}
   e_BulletPool: {fileID: 1747844014}
   enemys: {fileID: 677244155}
@@ -792,6 +839,7 @@ Transform:
   - {fileID: 698201853}
   - {fileID: 1747844013}
   - {fileID: 677244155}
+  - {fileID: 919961185}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -817,13 +865,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900e0441034b0fa4ca5a9458106238bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 12
   minPositionX: -6
   maxPositionX: 6
   minPositionZ: -3
   maxPositionZ: 3
   fpsCam: {fileID: 522413464}
   tpsCam: {fileID: 963194227}
+--- !u!65 &1246286733
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246286730}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.02, y: 0.5, z: 1.64}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1481529428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,7 +1089,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9685e563fe203cf4d8df3502d5b68389, type: 2}
+  - {fileID: 2100000, guid: d2dbf168076a5d147a1c0d8e39814a68, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

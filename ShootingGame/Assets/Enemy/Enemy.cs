@@ -10,14 +10,16 @@ public class Enemy : MonoBehaviour
 
     private Material flashMaterial = null;
     private ObjectPool enemyBulletPool;
+    private ObjectPool particlePool;
 
     private void Start()
     {
+
         flashMaterial = transform.GetComponentsInChildren<Renderer>()[0].material;
         flashMaterial.EnableKeyword("_EMISSION");
 
-
         enemyBulletPool = StageControl.Instance.e_BulletPool;
+        particlePool    = StageControl.Instance.particlePool;
     }
 
 
@@ -41,6 +43,7 @@ public class Enemy : MonoBehaviour
 
             if (hitPoint <= 0)
             {
+                particlePool.Launch(transform.position, 0).GetComponent<ExplosionScript>().PlayPartcleSystem();
                 Hide();
             }
             else
@@ -53,7 +56,7 @@ public class Enemy : MonoBehaviour
     /*マテリアルを点滅させて当たってる感を出す*/
     private IEnumerator HitFlashTime()
     {
-        flashMaterial.SetColor("_EmissionColor", Color.red);
+        flashMaterial.SetColor("_EmissionColor", Color.white);
         yield return new WaitForSeconds(hitFlashTime);
         flashMaterial.SetColor("_EmissionColor", Color.black);
     }

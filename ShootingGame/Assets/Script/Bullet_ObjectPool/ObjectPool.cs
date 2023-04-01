@@ -30,7 +30,6 @@ public class ObjectPool : MonoBehaviour
     {
         if (bulletQueue.Count <= 0)
         {
-            print("’eØ‚êII");
             return null;
         }
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TherdWay
   m_EditorClassIdentifier: 
   direction: 180
-  speed: 20
+  speed: 15
   count: 3
-  angle: 10
+  angle: 40
   isAimPlayer: 0

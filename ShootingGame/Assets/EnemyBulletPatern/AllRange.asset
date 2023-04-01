@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AllRange
   m_EditorClassIdentifier: 
   direction: 180
-  speed: 10
+  speed: 7
   count: 120
-  angle: 20
+  angle: 30
   isAimPlayer: 0

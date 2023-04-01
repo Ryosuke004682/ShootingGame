@@ -89,7 +89,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _fresnelPower: 1.42
+    - _fresnelPower: 1.16
     - _moveSpeed: 0.003
     - _noise: 111.05
     m_Colors:

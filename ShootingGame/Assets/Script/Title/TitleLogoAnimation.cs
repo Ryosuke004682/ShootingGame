@@ -17,6 +17,7 @@ public class TitleLogoAnimation : MonoBehaviour
     {
         vp = GetComponent<VideoPlayer>();
         vp.targetCameraAlpha = 0.0f;
+        
     }
 
     private void Update()

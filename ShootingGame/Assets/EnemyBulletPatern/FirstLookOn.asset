@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FirstLookOn
   m_EditorClassIdentifier: 
   direction: 180
-  speed: 15
+  speed: 10
   count: 1
   angle: 0
   isAimPlayer: 0

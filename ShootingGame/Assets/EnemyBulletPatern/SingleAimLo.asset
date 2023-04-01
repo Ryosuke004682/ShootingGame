@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SingleAimLo
   m_EditorClassIdentifier: 
   direction: 0
-  speed: 15
+  speed: 10
   count: 2
   angle: 0
   isAimPlayer: 1

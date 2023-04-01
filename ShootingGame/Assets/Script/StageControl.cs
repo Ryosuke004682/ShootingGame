@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class StageControl : MonoBehaviour
 {
+    [SerializeField] public ObjectPool particlePool = null;
     [SerializeField] public ObjectPool p_BulletPool = null;
     [SerializeField] public ObjectPool e_BulletPool = null;
     [SerializeField] public Transform  enemys       = null;
     [SerializeField] public PlayerControl playerObj = null;
     [SerializeField] public StageSequencer sequence = null;
+    
 
-    public  float stageSpeed        = 5.0f;
+    public float stageSpeed        = 5.0f;
     private float stageProgressTime = 0.0f;
 
     private static StageControl instance;
@@ -18,6 +20,8 @@ public class StageControl : MonoBehaviour
     public  static StageControl Instance { get => instance; }
     private void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         instance = this.GetComponent<StageControl>();
     }
 
