@@ -1,9 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class StageControl : MonoBehaviour
 {
+    /* èÍñ ÇÃèÛë‘ä«óù */
+    public enum PlayStopCodeDef
+    {
+        PlayerDead,
+        BossDefeat,
+    }
+    public PlayStopCodeDef playStop;
+
+
+
     [SerializeField] public ObjectPool particlePool = null;
     [SerializeField] public ObjectPool p_BulletPool = null;
     [SerializeField] public ObjectPool e_BulletPool = null;
@@ -12,8 +23,11 @@ public class StageControl : MonoBehaviour
     [SerializeField] public StageSequencer sequence = null;
     
 
-    public float stageSpeed        = 5.0f;
+    public  float stageSpeed        = 5.0f;
     private float stageProgressTime = 0.0f;
+
+    public bool isPlay = false;
+    public bool isBossDestroy = false;
 
     private static StageControl instance;
 
@@ -27,14 +41,31 @@ public class StageControl : MonoBehaviour
 
     private void Start()
     {
-        
         sequence.Load();
         sequence.StageReset();
         stageProgressTime = 0;
+
+        isPlay = false;
     }
 
     private void Update()
     {
+        /*PlayerÇ™éÄÇÒÇæÇ∆Ç´ÅAÉ{ÉXÇì|ÇµÇΩÇ∆Ç´ÇÃèÛë‘ä«óù*/
+        if(playerObj.isDead)
+        {
+            playStop = PlayStopCodeDef.PlayerDead;
+            isPlay = false;
+        }
+        if(isBossDestroy)
+        {
+            playStop = PlayStopCodeDef.BossDefeat;
+            isPlay = false;
+        }
+
+
+        if(isBossDestroy) isPlay = false;
+        if (!isPlay) return;
+
         sequence.Step(stageProgressTime);
         stageProgressTime += Time.deltaTime;
 
@@ -55,5 +86,23 @@ public class StageControl : MonoBehaviour
             print("âüÇ≥ÇÍÇƒÇÈÇÊp");
             playerObj.Shot();
         }
+    }
+
+    public void StageStart()
+    {
+        isPlay           = true;
+        isBossDestroy    = false;
+        playerObj.isDead = false;
+
+
+        stageProgressTime = 0.0f;
+        stageSpeed        = 0.0f;
+        sequence.StageReset();
+    }
+
+    public void ResetStage()
+    {
+        BroadcastMessage("Hide" , SendMessageOptions.DontRequireReceiver);
+        transform.position = Vector3.zero;
     }
 }
