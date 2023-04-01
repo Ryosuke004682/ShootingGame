@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265551d0b9335544e80deae3d8e3e6cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoint: 5
+  hitPoint: 6
   hitFlashTime: 0.05
 --- !u!95 &268935252336043987
 Animator:

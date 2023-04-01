@@ -380,8 +380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265551d0b9335544e80deae3d8e3e6cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoint: 100
-  hitFlashTime: 0.05
+  hitPoint: 20
+  hitFlashTime: 0.1
+  isBoss: 1
 --- !u!1 &1040454269646089139
 GameObject:
   m_ObjectHideFlags: 0

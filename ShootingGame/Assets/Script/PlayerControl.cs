@@ -27,6 +27,9 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private Camera tpsCam;
 
 
+
+    public bool isDead = false;
+
     private float interval = 0;
     private ObjectPool bulletPool;
 
@@ -75,4 +78,14 @@ public class PlayerControl : MonoBehaviour
             interval = 0.1f;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EnemyBullet"))
+        {
+            other.GetComponent<PoolContent>().Hide();
+            isDead = true;
+        }
+    }
+
 }

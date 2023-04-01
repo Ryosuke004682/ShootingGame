@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private int hitPoint = 3;
     [SerializeField] private float hitFlashTime = 0.05f;
+    [SerializeField] private bool isBoss = false;
 
     private Material flashMaterial = null;
     private ObjectPool enemyBulletPool;
@@ -43,6 +44,8 @@ public class Enemy : MonoBehaviour
 
             if (hitPoint <= 0)
             {
+                StageControl.Instance.isBossDestroy = isBoss;
+
                 particlePool.Launch(transform.position, 0).GetComponent<ExplosionScript>().PlayPartcleSystem();
                 Hide();
             }
