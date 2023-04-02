@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            state = GameState.GAMEOVER;
+            state = GameState.TITLE;
 
             gameOverText.SetActive(false);
             title.       SetActive(true);

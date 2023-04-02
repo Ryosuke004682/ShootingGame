@@ -88,4 +88,12 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    public void SetupForPlay()
+    {
+        interval = 0;
+        isDead = false;
+        transform.localPosition = new Vector3(0.0f,0.0f,-3.5f);
+        transform.localEulerAngles = new Vector3(0, 0, 0);
+    }
+
 }

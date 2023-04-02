@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f847614e7e2824983fe0fe625f2e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSpeed: 0.12
-  closeSpeed: 0.4
+  openSpeed: 1.5
+  closeSpeed: 4.2
   isMaxAlpha: 0
   vp: {fileID: 466102305}
 --- !u!1 &475287654
