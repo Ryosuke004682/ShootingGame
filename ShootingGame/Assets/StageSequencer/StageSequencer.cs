@@ -49,7 +49,6 @@ public class StageSequencer : ScriptableObject
 
     public void Load()
     {
-        //名前から番号を取得する
         var revarr = new Dictionary<string, uint>();
         for (uint i = 0; i < enemyPrefabs.Length; i++)
         {
@@ -68,7 +67,7 @@ public class StageSequencer : ScriptableObject
 
             if (cols.Length != 5) continue;
 
-            //第四引数は、もしCSVに書いてある敵の名前が間違っていたら、enemyPrefabsの0番目を使う処理。
+         /*第四引数は、もしCSVに書いてある敵の名前が間違っていたら、enemyPrefabsの0番目を代用する処理*/
             stageCSVData.Add(new StageData(float.Parse(cols[0]), cols[1],
                                            float.Parse(cols[2]), float.Parse(cols[3]),
                                            revarr.ContainsKey(cols[4]) ? revarr[cols[4]] : 0));

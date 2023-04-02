@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int hitPoint = 3;
     [SerializeField] private float hitFlashTime = 0.05f;
+    [SerializeField] private int scorePoint = 0;
     [SerializeField] private bool isBoss = false;
+    [SerializeField] private AudioSource source;
+
 
     private Material flashMaterial = null;
     private ObjectPool enemyBulletPool;
@@ -15,6 +17,8 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        source= GetComponent<AudioSource>();
+        source.Stop();
 
         flashMaterial = transform.GetComponentsInChildren<Renderer>()[0].material;
         flashMaterial.EnableKeyword("_EMISSION");
@@ -45,6 +49,8 @@ public class Enemy : MonoBehaviour
             if (hitPoint <= 0)
             {
                 StageControl.Instance.isBossDestroy = isBoss;
+                StageControl.Instance.AddScore(scorePoint);
+                source.Play();
 
                 particlePool.Launch(transform.position, 0).GetComponent<ExplosionScript>().PlayPartcleSystem();
                 Hide();

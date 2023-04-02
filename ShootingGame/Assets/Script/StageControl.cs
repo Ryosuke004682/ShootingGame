@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageControl : MonoBehaviour
 {
@@ -21,13 +22,16 @@ public class StageControl : MonoBehaviour
     [SerializeField] public Transform  enemys       = null;
     [SerializeField] public PlayerControl playerObj = null;
     [SerializeField] public StageSequencer sequence = null;
-    
+
+    [SerializeField] private Text scoreValue;
 
     public  float stageSpeed        = 5.0f;
     private float stageProgressTime = 0.0f;
 
     public bool isPlay = false;
     public bool isBossDestroy = false;
+
+    private int score = 0;
 
     private static StageControl instance;
 
@@ -98,11 +102,24 @@ public class StageControl : MonoBehaviour
         stageProgressTime = 0.0f;
         stageSpeed        = 0.0f;
         sequence.StageReset();
+        playerObj.SetupForPlay();
+        SetScore(0);
     }
 
     public void ResetStage()
     {
         BroadcastMessage("Hide" , SendMessageOptions.DontRequireReceiver);
         transform.position = Vector3.zero;
+    }
+
+    public void AddScore(int value)
+    {
+        SetScore(score + value);
+    }
+
+    public void SetScore(int value)
+    {
+        score = value;
+        scoreValue.text = $"{score : 00000}";
     }
 }
